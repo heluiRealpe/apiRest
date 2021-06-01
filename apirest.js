@@ -51,8 +51,8 @@ app.post('/discos', (req, res) => {
 });
 
 app.put('/discos', (req, res) => {
-    let params = [req.body.anyoPublicacion, req.body.id]
-    let sql = 'UPDATE angular.discos SET anyoPublicacion = ? WHERE (id = ?);';
+    let params = [req.body.titulo, req.body.interprete, req.body.anyoPublicacion, req.body.id]
+    let sql = 'UPDATE angular.discos SET titulo = ?, interprete = ?, anyoPublicacion = ? WHERE (id = ?);';
     connection.query(sql, params, (err, result) => {
         if (err) throw res.send(err);
         res.send(result);
@@ -60,7 +60,7 @@ app.put('/discos', (req, res) => {
 });
 
 app.delete('/discos', (req, res) => {
-    let params = [req.query.id];
+    let params = [req.body.id];
     let sql = "DELETE FROM angular.discos WHERE (id = ?);";
     connection.query(sql, params, (err, result) => {
         if (err) throw res.send(err);

@@ -42,8 +42,8 @@ app.get('/discos', (req, res) => {
 });
 
 app.post('/discos', (req, res) => {
-    let params = [req.body.id, req.body.titulo, req.body.interprete, req.body.anyoPublicacion];
-    let sql = 'INSERT INTO angular.discos (id, titulo, interprete, anyoPublicacion) VALUES (?,?,?,?);';
+    let params = [req.body.titulo, req.body.interprete, req.body.anyoPublicacion];
+    let sql = 'INSERT INTO angular.discos (titulo, interprete, anyoPublicacion) VALUES (?,?,?);';
     connection.query(sql, params, (err, result) => {
         if(err) throw res.send(err);
         res.send(result);

@@ -51,8 +51,8 @@ app.post('/discos', (req, res) => {
 });
 
 app.put('/discos', (req, res) => {
-    let params = [req.body.titulo, req.body.interprete, req.body.anyoPublicacion, req.body.id]
-    let sql = 'UPDATE angular.discos SET titulo = ?, interprete = ?, anyoPublicacion = ? WHERE (id = ?);';
+    let params = [req.body.titulo, req.body.interprete, req.body.anyoPublicacion, req.body.id];
+    let sql = 'UPDATE angular.discos AS d SET d.titulo=COALESCE(?, titulo), d.interprete=COALESCE(?, interprete), d.anyoPublicacion=COALESCE(?, anyoPublicacion) WHERE (id = ?);';
     connection.query(sql, params, (err, result) => {
         if (err) throw res.send(err);
         res.send(result);

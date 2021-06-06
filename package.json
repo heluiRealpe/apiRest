@@ -1,17 +1,26 @@
 {
-  "name": "ApiRest",
+  "name": "apirest",
   "version": "1.0.0",
-  "description": "",
+  "description": "primer proyecto de integración continua",
   "main": "apirest.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Héctor Realpe",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.2.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heluiRealpe/apiRest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heluiRealpe/apiRest/issues"
+  },
+  "homepage": "https://github.com/heluiRealpe/apiRest#readme"
 }

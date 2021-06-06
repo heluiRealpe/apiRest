@@ -3,10 +3,12 @@ const app = express();
 const mysql = require('mysql2');
 const cors = require('cors');
 
+let port = process.env.PORT || 300;
+
 let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '2417906',
+    host: 'angular.c7kcymgv2b7c.us-east-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'BJ77-Bp.gQFwspJ',
     database: 'angular'
 });
 
@@ -72,7 +74,7 @@ app.use((req, res) => {
     respuesta = { error:true, codigo: 200, mensaje: 'URL not found'};
     res.status(404).send(respuesta);
 });
-app.listen(3000, () => {
-    console.log('App listening on port 3000');
+app.listen(port, () => {
+    console.log('App listening on port 300');
     
 });

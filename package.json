@@ -4,8 +4,7 @@
   "description": "primer proyecto de integración continua",
   "main": "apirest.js",
   "scripts": {
-    "start": "node apirest.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node apirest.js"
   },
   "keywords": [],
   "author": "Héctor Realpe",
